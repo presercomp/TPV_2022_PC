@@ -127,7 +127,7 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_menu_logoutActionPerformed
 
     private void menuUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuUsuariosActionPerformed
-        UserAdmin u = new UserAdmin();
+        UserAdmin u = new UserAdmin(this.panel);
         this.panel.add(u);
         u.setVisible(true);
     }//GEN-LAST:event_menuUsuariosActionPerformed

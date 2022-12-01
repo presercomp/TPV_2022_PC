@@ -26,12 +26,8 @@ public class Usuarios {
         String query = "INSERT INTO usuarios (apodo, clave) ";
         query += " VALUES ('"+apodo+"', '"+clave+"');";
         ConexionMYSQL c = new ConexionMYSQL();
-        ResultSet r = c.consulta(query);
-        try {
-            return r.next();
-        } catch (SQLException ex) {
-            return false;
-        }
+        return c.ejecutar(query) == 1;
+        
     }
     
     public ResultSet result(){
@@ -45,24 +41,14 @@ public class Usuarios {
         String query = "UPDATE usuarios SET apodo = '"+apodo+"', ";
         query += " clave = '"+clave+"' WHERE id_usuario ="+id_usuario+";);";
         ConexionMYSQL c = new ConexionMYSQL();
-        ResultSet r = c.consulta(query);
-        try {
-            return r.next();
-        } catch (SQLException ex) {
-            return false;
-        }
+        return c.ejecutar(query) == 1;        
     }
     
     public boolean delete(int id_usuario){
         String query = "DELETE FROM usuarios ";
         query += " WHERE id_usuario ="+id_usuario+";);";
         ConexionMYSQL c = new ConexionMYSQL();
-        ResultSet r = c.consulta(query);
-        try {
-            return r.next();
-        } catch (SQLException ex) {
-            return false;
-        }
+        return c.ejecutar(query) == 1;
     }
     
     
